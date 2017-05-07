@@ -16,7 +16,7 @@ function sendLogin(){
 		document.getElementById("nx_logged_in").style.display="block";
 		document.getElementById("username").innerHTML=data.username;
 	}
-	
-	xhr.open("GET","http://localhost:8888/php_prac_2/login.php?acc="+acc+"&pw="+pw,true);
+	var urlWithParam="http://localhost:8888/php_prac_2_dep/control_pages/login.php?acc="+acc+"&pw="+pw;
+	xhr.open("GET",urlWithParam,true);
 
 }
