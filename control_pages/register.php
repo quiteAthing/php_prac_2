@@ -1,36 +1,28 @@
 <?php
-#user 登入
-	echo "Hello";
+	require_once("db_connection.php");
+	header("Access-Control-Allow-Origin: *");
+	$rst_arr=array();
+
+?>
+
+<?php
+	$stmt="insert into members(account,email,password,registered)values(:account,:email,:password,now())";
+	$regdata=json_decode(file_get_contents("php://input"));
+	$pstmt=$conn->prepare($stmt);
+	$pstmt->bindParam(":account",$regdata->account);
+	$pstmt->bindParam(":password",$regdata->password);
+	$pstmt->bindParam(":email",$regdata->email);
 	
-	$host_name="localhost";
-	$dbname="xblog";
-	$username='root';
-	$password='';
-	$stmt="";
-	
-	
-	$useracc=$_GET["acc"];
-	$userpass=$_GET["pw"];
-	$udata="";
-	echo "pw = ", (string)$userpass,"  acc= ",(string)$userpass;
-	
-	try{
-		$conn =new PDO("mysql:host=$host_name;dbname=$dbname",$username,$password);
-		$conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-		$udata=$conn->query($stmt).fetch();
-		$conn=null;
-	}catch(PDOException $e){
-		exit($e->getMessage());
+	if($pstmt->execute()){
+		$rst_arr["actionsuccess"]=true;
+		$rst_arr["alias"]="success";
+			echo json_encode($rst_arr);
+	}else{
+		$rst_arr["actionsuccess"]=false;
+		$rst_arr["place"]="query failed";
+			echo json_encode($rst_arr);
+		
 	}
-	if($success=!empth($udata)){
-		$arr=("loginsuccess" =>$success,"alias"=>$udata["aliaas"],"notification"=>$udata["notification"]);
-		echo json_encode($arr);
-	}
-	else{
-		$arr=("loginsuccess" =>$success);
-		echo json_encode($arr);
-	}
-	
 	
 	
 	

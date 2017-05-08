@@ -11,12 +11,17 @@
 	$useracc=$_GET["acc"];
 	$userpass=$_GET["pw"];
 	$udata="";
-	$stmt="select alias,memberid,password from members where memberid=1";
+	$stmt="select alias,memberid,password from members where account=:account";
 	
 	try{
 		$conn =new PDO("mysql:host=$host_name;dbname=$dbname",$username,$password);
 		$conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-		$udata=$conn->query($stmt)->fetch();
+		
+		$pstmt=$conn->prepare($stmt);
+		$pstmt->bindParam(":account",$useracc);
+		$pstmt->execute();
+		$udata=$pstmt->fetch();
+		
 		$conn=null;
 	}catch(PDOException $e){
 		exit($e->getMessage());
@@ -31,7 +36,7 @@
 		echo json_encode($arr);
 	}
 	else{
-		$arr=array("loginsuccess" =>$success);
+		$arr=array("loginsuccess" =>$success,"place"=>"eeet");
 		echo json_encode($arr);
 	}
 	
