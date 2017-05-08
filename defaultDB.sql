@@ -6,7 +6,7 @@ create table members(
 	account varchar(120) not null unique,
 	email varchar(255) not null unique,
 	alias varchar(87) not null default"new user",
-	password varchar(255) not null,
+	password varchar(255),
 	registered datetime,
 	accesstoken char(80) unique,
 	lastsignedin datetime);
@@ -22,6 +22,6 @@ create table articles(
 	foreign key(author) references members(memberid));
 
 
-insert into members(account,email,alias,registered)values("HelloBaby","hello@helloworld.com","Babe",NOW());
+insert into members(account,email,alias,password,registered)values("HelloBaby","hello@helloworld.com","Babe","thisispassword",NOW());
 	
-insert into members(account,email,alias,registered)values("Hellby","lo@helloworld.com","Babd",NOW());
+insert into members(account,email,alias,password,registered)values("Hellby","lo@helloworld.com","Babd","thisispassword2",NOW());
