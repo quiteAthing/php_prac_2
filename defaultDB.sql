@@ -20,6 +20,14 @@ create table articles(
 	submitted datetime,
 	lastupdate datetime,
 	foreign key(author) references members(memberid));
+	
+create table userdata(
+	userid int(9) unique,
+	intro text,
+	dateofbirth datetime,
+	phone varchar(12),
+	foreign key(userid) references members(memberid)
+);
 
 
 insert into members(account,email,alias,password,registered)values("HelloBaby","hello@helloworld.com","Babe","thisispassword",NOW());

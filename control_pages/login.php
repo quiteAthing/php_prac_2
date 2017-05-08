@@ -24,7 +24,7 @@
 	if($success= !is_bool($udata)){
 		if($userpass==$udata["password"]){
 				$arr=array("loginsuccess" =>$success,"alias"=>$udata["alias"]);
-				setcookie("xblog","loggedin",time()+300,"","","",true);
+				setcookie("xblog",$udata["memberid"],time()+300,"","","",true);
 		}else{
 			$arr=array("loginsuccess" =>"some ");
 		}
