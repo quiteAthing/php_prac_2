@@ -21,6 +21,7 @@
 	    $rst_arr["title"]=$rst["title"];
 	    $rst_arr["article"]=$rst["article"];
 	    $rst_arr["submitted"]=$rst["submitted"];
+	    $rst_arr["articleid"]=$rst["articleid"];
 		
 		echo json_encode($rst_arr);
 	}else{

@@ -27,11 +27,11 @@
 		exit($e->getMessage());
 	}
 	if($success= !is_bool($udata)){
-		if($userpass==$udata["password"]){
+		if($userpass===$udata["password"]){
 				$arr=array("loginsuccess" =>$success,"alias"=>$udata["alias"]);
 				setcookie("xblog",$udata["memberid"],time()+3600,"","","",true);
 		}else{
-			$arr=array("loginsuccess" =>"some ");
+			$arr=array("loginsuccess" =>"some ","place"=> ($userpass===$udata["password"]));
 		}
 		echo json_encode($arr);
 	}
