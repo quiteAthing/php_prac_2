@@ -19,6 +19,6 @@ function sendLogin(){
 		}
 	
 	}
-	var urlWithParam="/control_pages/login.php?acc="+acc+"&pw="+pw;
+	var urlWithParam="control_pages/login.php?acc="+acc+"&pw="+pw;
 	xhr.open("GET",urlWithParam,true);
 }

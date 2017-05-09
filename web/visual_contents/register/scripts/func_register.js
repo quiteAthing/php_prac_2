@@ -29,6 +29,6 @@ function sendRegister(){
 		document.getElementById("username").innerHTML=data.alias;
 	}
 	
-	xhr.open("POST","http://localhost/php_prac_2_dep/control_pages/register.php",true);
+	xhr.open("POST","control_pages/register.php",true);
 
 }

@@ -19,5 +19,5 @@ function sendNewArticle(){
 			}
 		}
 	}
-	xhr.open("POST","http://localhost/php_prac_2_dep/control_pages/newArticle.php",true);
+	xhr.open("POST","control_pages/newArticle.php",true);
 }

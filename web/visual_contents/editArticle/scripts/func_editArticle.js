@@ -23,7 +23,7 @@ function setup(){
 			}
 		}
 	}
-	xhr.open("GET","http://localhost/php_prac_2_dep/control_pages/getArticle.php?articleid="+articleid,true);
+	xhr.open("GET","control_pages/getArticle.php?articleid="+articleid,true);
 	
 	function stuffing(data){
 		document.getElementById("title").value=data.title;
@@ -60,5 +60,5 @@ function sendUpdateArticle(){
 			}
 		}
 	}
-	xhr.open("POST","http://localhost/php_prac_2_dep/control_pages/updateArticle.php",true);
+	xhr.open("POST","control_pages/updateArticle.php",true);
 }

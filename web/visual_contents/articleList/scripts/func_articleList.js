@@ -44,5 +44,5 @@ function request_data(cbf){
 		}
 	}
 	
-	xhr.open("GET","http://localhost/php_prac_2_dep/control_pages/article_list.php",true);
+	xhr.open("GET","control_pages/article_list.php",true);
 }
