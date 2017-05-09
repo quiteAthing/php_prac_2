@@ -92,7 +92,7 @@ function sendLogin(){
 function fetch_userdata(){
 	
 	request_data(function(data){
-		if(data.actionsuccess){
+		if(data.querysuccess){
 			document.getElementById("nx_logged_out").style.display="none";
 			document.getElementById("nx_logged_in").style.display="block";
 			document.getElementById("username").innerHTML=data.alias;

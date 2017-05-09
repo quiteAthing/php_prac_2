@@ -43,7 +43,8 @@ function populate_articles(){
 	function setDelButton(data){
 			var btn=document.createElement("input");
 			btn.setAttribute("type","button");
-			btn.value=(data[0])
+			btn.value=(data[0]);
+			btn.name=data[1];
 			btn.addEventListener("click",function(){
 				var xhr=new XMLHttpRequest();
 				xhr.onreadystatechange=function(){
@@ -64,7 +65,8 @@ function populate_articles(){
 						
 						
 			}
-			xhr.open("GET","control_pages/delete_article?articleid="+data[1],"");
+			var aid=this.getAttribute("name");
+			xhr.open("GET","control_pages/delete_article.php?articleid="+aid,"");
 			
 				
 
