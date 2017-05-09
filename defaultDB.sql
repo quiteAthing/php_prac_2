@@ -1,6 +1,6 @@
-drop database if exists xblog ;
+/*drop database if exists xblog ;
 create database xblog default character set utf8 collate utf8_bin;
-use xblog;
+use xblog;*/
 create table members(
 	memberid int(11) primary key auto_increment,
 	account varchar(120) not null unique,

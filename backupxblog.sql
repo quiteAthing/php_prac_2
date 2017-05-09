@@ -1,20 +1,9 @@
 /*
 SQLyog Community v12.4.1 (64 bit)
-MySQL - 5.7.16 : Database - xblog
+
 *********************************************************************
 */
 
-/*!40101 SET NAMES utf8 */;
-
-/*!40101 SET SQL_MODE=''*/;
-
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`xblog` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
-
-USE `xblog`;
 
 /*Table structure for table `articles` */
 
@@ -25,8 +14,8 @@ CREATE TABLE `articles` (
   `author` int(11) NOT NULL,
   `title` varchar(300) COLLATE utf8_bin NOT NULL DEFAULT 'untitled article',
   `article` text COLLATE utf8_bin,
-  `submitted` datetime DEFAULT NULL,
-  `lastupdate` datetime DEFAULT NULL,
+  `submitted` datetime ,
+  `lastupdate` datetime ,
   PRIMARY KEY (`articleid`),
   KEY `author` (`author`),
   CONSTRAINT `articles_ibfk_1` FOREIGN KEY (`author`) REFERENCES `members` (`memberid`)
@@ -58,9 +47,9 @@ CREATE TABLE `members` (
   `email` varchar(255) COLLATE utf8_bin NOT NULL,
   `alias` varchar(87) COLLATE utf8_bin NOT NULL DEFAULT 'new user',
   `password` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `registered` datetime DEFAULT NULL,
+  `registered` datetime ,
   `accesstoken` char(80) COLLATE utf8_bin DEFAULT NULL,
-  `lastsignedin` datetime DEFAULT NULL,
+  `lastsignedin` datetime ,
   PRIMARY KEY (`memberid`),
   UNIQUE KEY `account` (`account`),
   UNIQUE KEY `email` (`email`),
@@ -81,9 +70,9 @@ insert  into `members`(`memberid`,`account`,`email`,`alias`,`password`,`register
 DROP TABLE IF EXISTS `userdata`;
 
 CREATE TABLE `userdata` (
-  `userid` int(9) DEFAULT NULL,
+  `userid` int(9) ,
   `intro` text COLLATE utf8_bin,
-  `dateofbirth` datetime DEFAULT NULL,
+  `dateofbirth` datetime ,
   `phone` varchar(12) COLLATE utf8_bin DEFAULT NULL,
   UNIQUE KEY `userid` (`userid`),
   CONSTRAINT `userdata_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `members` (`memberid`)
