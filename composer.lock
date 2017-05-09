@@ -1,21 +1,3 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Gist
- @quiteAthing
- Sign out
- Watch 27
-  Star 74
-  Fork 215 heroku/php-getting-started
- Code  Issues 0  Pull requests 0  Projects 0  Pulse  Graphs
-Branch: master Find file Copy pathphp-getting-started/composer.lock
-4f2369c  29 days ago
-@jonmountjoy jonmountjoy update silex, monolog and twig versions
-3 contributors @jonmountjoy @amerine @dzuelke
-RawBlameHistory     
-850 lines (849 sloc)  30.7 KB
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
@@ -865,5 +847,3 @@ RawBlameHistory
     "platform": [],
     "platform-dev": []
 }
-Contact GitHub API Training Shop Blog About
-© 2017 GitHub, Inc. Terms Privacy Security Status Help
