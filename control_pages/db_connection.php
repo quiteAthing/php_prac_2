@@ -17,6 +17,9 @@
 		echo $e->getMessage();
 	}
 	
-	
+	function pack_and_leave(){
+		$conn=null;
+		exit();
+	}
 	
 ?>
