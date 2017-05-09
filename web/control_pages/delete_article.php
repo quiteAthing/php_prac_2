@@ -4,7 +4,7 @@
 	$rst_arr=array();
 	if(!isset($_COOKIE["xblog"])){
 		$rst_arr["actionsuccess"]=false;
-		$rst_arr["place"]="you are not loggedin";
+		$rst_arr["place"]="you are not logged in";
 		echo json_encode($rst_arr);
 		pack_and_leave();
 

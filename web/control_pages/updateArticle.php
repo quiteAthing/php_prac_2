@@ -25,6 +25,7 @@
 	if($pstmt->execute()){
 		$rst_arr["actionsuccess"]=true;
 		$rst_arr["place"]="everything fine";
+		$rst_arr["articleid"]=$articleid;
 		
 		echo json_encode($rst_arr);
 	}else{

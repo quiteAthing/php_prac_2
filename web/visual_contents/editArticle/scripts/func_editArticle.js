@@ -7,7 +7,6 @@ window.addEventListener("load",setup);
 function setup(){
 	var paras=window.location.search;
 	var articleid=paras.replace("?","").split("=")[1];
-	console.log(articleid);
 	var xhr=new XMLHttpRequest();
 	xhr.onreadystatechange=function(){
 		if(xhr.readyState==1){
@@ -17,7 +16,6 @@ function setup(){
 			var rst=JSON.parse(xhr.responseText);
 			if(rst.actionsuccess){
 				stuffing(rst);
-				alert("success");
 			}else{
 				alert("failed");
 			}
@@ -54,7 +52,7 @@ function sendUpdateArticle(){
 		if(xhr.readyState==4 && xhr.status==200){
 			var rst=JSON.parse(xhr.responseText);
 			if(rst.actionsuccess){
-				alert("success");
+				window.location="readArticle.html?articleid="+rst.articleid;
 			}else{
 				alert("failed");
 			}

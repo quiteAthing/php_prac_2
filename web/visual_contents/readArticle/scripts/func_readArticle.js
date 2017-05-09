@@ -14,9 +14,6 @@ function setup(){
 			var rst=JSON.parse(xhr.responseText);
 			if(rst.actionsuccess){
 				stuffing(rst);
-				alert("success");
-			}else{
-				alert("failed");
 			}
 		}
 	}
