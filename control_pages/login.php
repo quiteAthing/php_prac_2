@@ -29,16 +29,21 @@
 	if($success= !is_bool($udata)){
 		if($userpass===$udata["password"]){
 				$arr=array("loginsuccess" =>$success,"alias"=>$udata["alias"]);
-				setcookie("xblog",$udata["memberid"],time()+3600,"","","",true);
+				setcookie("xblog",$udata["memberid"],time()+3600,"localhost","","",true);
+	
 		}else{
 			$arr=array("loginsuccess" =>"some ","place"=> ($userpass===$udata["password"]));
+
 		}
 		echo json_encode($arr);
 	}
 	else{
 		$arr=array("loginsuccess" =>$success,"place"=>"eeet");
 		echo json_encode($arr);
+
 	}
+			$conn=null;
+		exit();
 	
 	
 	

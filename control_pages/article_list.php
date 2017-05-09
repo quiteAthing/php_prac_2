@@ -6,7 +6,7 @@
 
 
 <?php
-	 $stmt="select a.title title,a.articleid articleid,b.alias alias,a.submitted submitted,a.lastupdate lastupdate from articles as a join members as b on a.author=b.memberid limit 10;";
+	 $stmt="select a.title title,a.articleid articleid,b.alias alias,a.submitted submitted,a.lastupdate lastupdate from articles as a join members as b on a.author=b.memberid order by a.articleid  desc limit 10";
 	 $rst=$conn->query($stmt)->fetchAll();
 	 $ret=array();
 	 foreach( $rst as $article){
