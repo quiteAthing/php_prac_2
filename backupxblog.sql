@@ -30,7 +30,7 @@ CREATE TABLE `articles` (
   PRIMARY KEY (`articleid`),
   KEY `author` (`author`),
   CONSTRAINT `articles_ibfk_1` FOREIGN KEY (`author`) REFERENCES `members` (`memberid`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 /*Data for the table `articles` */
 
@@ -40,7 +40,13 @@ insert  into `articles`(`articleid`,`author`,`title`,`article`,`submitted`,`last
 (3,1,'untitled article','test game article 1這是測試用文章','2017-05-08 14:50:46',NULL),
 (4,2,'untitled article','edrhdfghdfgjdf終於換帳號成功','2017-05-08 16:13:01',NULL),
 (5,2,'untitled article','edrhdfghdfgjdf終於換帳號成功','2017-05-08 16:13:03',NULL),
-(6,2,'untitled article','edrhdfghdfgjdf終於換帳號成功','2017-05-08 16:13:04',NULL);
+(6,2,'untitled article','edrhdfghdfgjdf終於換帳號成功','2017-05-08 16:13:04',NULL),
+(8,2,'untitled article','測試山','2017-05-09 09:55:37',NULL),
+(10,2,'untitled article','mountain','2017-05-09 09:55:56',NULL),
+(13,5,'untitled article','dfgjghjfgj','2017-05-09 11:19:07',NULL),
+(14,5,'untitled article','dfgjghjfgj','2017-05-09 11:19:09',NULL),
+(15,5,'untitled article','dfgjghjfgj','2017-05-09 11:19:11',NULL),
+(16,5,'untitled article','asascascascascascacacas','2017-05-09 11:32:53',NULL);
 
 /*Table structure for table `members` */
 
@@ -59,7 +65,7 @@ CREATE TABLE `members` (
   UNIQUE KEY `account` (`account`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `accesstoken` (`accesstoken`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 /*Data for the table `members` */
 
@@ -67,7 +73,8 @@ insert  into `members`(`memberid`,`account`,`email`,`alias`,`password`,`register
 (1,'HelloBaby','hello@helloworld.com','Babe','thisispassword','2017-05-08 12:11:41',NULL,NULL),
 (2,'Hellby','lo@helloworld.com','Babd','thisispassword2','2017-05-08 12:11:41',NULL,NULL),
 (3,'kkkkkkkkkkk','jjjjjjjjjj','new user','dtyttttttt',NULL,NULL,NULL),
-(4,'jack','pas@pas@os','new user','thisispssword4','2017-05-08 16:45:24',NULL,NULL);
+(4,'jack','pas@pas@os','new user','thisispssword4','2017-05-08 16:45:24',NULL,NULL),
+(5,'tester','rr@jjj.com','new user','12345password','2017-05-09 11:03:44',NULL,NULL);
 
 /*Table structure for table `userdata` */
 
