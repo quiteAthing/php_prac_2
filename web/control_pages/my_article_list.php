@@ -8,15 +8,7 @@
 		echo json_encode($rst_arr);
 		pack_and_leave();
 	}
-	
 ?>
-<p>
-
-sdfsdfsdfsdlfgndflkhgasbnld;fjgl;osdfjgo;lsjdf;oghsd'lfkjghslkdfjhglksdjhfglkjsdfh'glksdfjg
-<br>
-TestContent1
-
-</p>
 	
 	
 <?php
@@ -27,6 +19,9 @@ TestContent1
 	 foreach( $rst as $article){
 		 array_push($ret,array("articleid"=>$article["articleid"], "alias"=>$article["alias"],"title"=>$article["title"],"lastupdate"=>$article["lastupdate"],"submitted"=>$article["submitted"]));
 	 }
+	 echo json_encode($ret);
+	 echo json_encode($ret);
+	 echo json_encode($ret);
 	 echo json_encode($ret);
 	 
 
